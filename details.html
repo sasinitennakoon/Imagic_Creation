@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details | Imagic Creation</title>
+    <link rel="stylesheet" href="css/detail.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rockwell+Nova:wght@300;400&family=Bennet+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    
+<section class="project-detail-section">
+    <div class="project-cover">
+        <img id="project-cover-img" src="" alt="Project Cover Image">
+        <h1 id="project-name"></h1> <!-- Title placed on cover image -->
+    </div>
+
+    <div class="project-info">
+        <span id="project-type"></span> | <span id="project-date"></span> | 
+        <a id="project-link" href="" target="_blank">Project Link</a>
+    </div>
+
+    <p id="project-description"></p>
+
+    <div class="project-navigation">
+        <button id="previous-project">Previous Project</button>
+        <button id="next-project">Next Project</button>
+    </div>
+</section>
+
+
+<script>
+    // Function to get URL parameters
+    function getUrlParameter(name) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(name);
+    }
+
+    window.onload = function() {
+        const projectId = getUrlParameter('id');
+        
+        // Data for each project
+        const projects = [
+            {
+                id: 1,
+                coverImage: "./images/Destination of the month May.jpg",
+                name: "Social Media Posters for Mackinnons Travel Company",
+                type: "Social media",
+                date: "2024-01-01",
+                link: "https://example.com/project1",
+                description: "I designed visually appealing social media posters for Mackinnons Travel Company to enhance their online presence and engage their audience. These posters were created to promote the company's travel packages, destinations, and services, focusing on vibrant designs and captivating visuals to inspire wanderlust. Through creative layouts and effective use of typography and imagery, the posters effectively communicate the brand’s essence while maintaining a professional and cohesive look."
+            },
+            {
+                id: 2,
+                coverImage: "./images/(1211) පාර්ලිමේන්තු මැතිවරණය 2024  සෑම් චන්ද්_රසෝම  සංවාද EP 01 00-00-04 (1).png",
+                name: "Project Title 2",
+                type: "Documentary",
+                date: "2024-02-01",
+                link: "https://example.com/project2",
+                description: "Description of the project 2."
+            },
+            {
+                id: 3,
+                coverImage: "../images/Fb post.jpg",
+                name: "Project Title 3",
+                type: "Film Production",
+                date: "2024-03-01",
+                link: "https://example.com/project3",
+                description: "Description of the project 3."
+            },
+            {
+                id: 4,
+                coverImage: "./images/syslink CCTV change 3.jpg",
+                name: "Project Title 4",
+                type: "CCTV Installation",
+                date: "2024-04-01",
+                link: "https://example.com/project4",
+                description: "Description of the project 4."
+            },
+            {
+                id: 5,
+                coverImage: "./images/DSC01791.jpg",
+                name: "Project Title 5",
+                type: "Photography",
+                date: "2024-05-01",
+                link: "https://example.com/project5",
+                description: "Description of the project 5."
+            },
+            {
+                id: 6,
+                coverImage: "./images/Fb CCTY post.jpg",
+                name: "Project Title 6",
+                type: "Branding",
+                date: "2024-06-01",
+                link: "https://example.com/project6",
+                description: "Description of the project 6."
+            }
+        ];
+
+        // Find the current project based on the projectId
+        const project = projects.find(p => p.id == projectId);
+
+        if (project) {
+            // Populate the details
+            document.getElementById('project-cover-img').src = project.coverImage;
+            document.getElementById('project-name').innerText = project.name;
+            document.getElementById('project-type').innerText = project.type;
+            document.getElementById('project-date').innerText = project.date;
+            document.getElementById('project-link').href = project.link;
+            document.getElementById('project-description').innerText = project.description;
+
+            // Navigation buttons for previous and next projects
+            const prevProject = projects.find(p => p.id === project.id - 1);
+            const nextProject = projects.find(p => p.id === project.id + 1);
+
+            document.getElementById('previous-project').onclick = function() {
+                if (prevProject) {
+                    window.location.href = `details.html?id=${prevProject.id}`;
+                }
+            };
+            document.getElementById('next-project').onclick = function() {
+                if (nextProject) {
+                    window.location.href = `details.html?id=${nextProject.id}`;
+                }
+            };
+        } else {
+            document.querySelector('.project-detail-section').innerText = "Project not found.";
+        }
+    };
+</script>
+
+</body>
+</html>

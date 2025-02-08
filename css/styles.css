@@ -1,0 +1,518 @@
+
+@import url('https://fonts.cdnfonts.com/css/rockwell-nova');
+@import url('https://fonts.googleapis.com/css2?family=Bennet+Display:wght@400;700&display=swap');
+/* General Reset */
+body, ul {
+    font-family: 'Bennet Display', serif;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+   
+}
+
+/* Navbar Container */
+/* Navbar Styling */
+#navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Ensures the navbar is above all other elements */
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 130px;
+    background-color: #1C5E52;
+    color: #fff;
+    height: 60px; /* Fixed height for the navbar */
+    font-family: 'Rockwell Nova', sans-serif;
+    font-weight:100;
+}
+
+.logo img {
+    height:200px; /* Adjust logo size */
+    width: auto;  /* Maintain aspect ratio */
+}
+
+
+/* Navbar Links */
+.nav-links {
+    display: flex;
+    gap: 40px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-family: 'Rockwell Nova', serif;
+    font-weight:100;
+    transition: color 0.3s;
+    font-size: medium;
+}
+
+.nav-links li a:hover {
+    color: #3eccb5; /* Accent Color */
+}
+
+
+/* Active link styles */
+.nav-link.active {
+    color: #3eccb5; /* Highlight color */
+    font-weight: bold;
+    border-bottom: 2px solid #3eccb5; /* Optional underline */
+}
+
+
+/* Hamburger Menu (Hidden by Default) */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: white;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background-color: #333;
+        border-radius: 5px;
+        overflow: hidden;
+        padding: 10px;
+        width: 150px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}
+
+/* Home Section */
+#home {
+    position: relative;
+    height: 100vh;
+    background: url('../images/cover.jpg') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 40px;
+    overflow: hidden;
+    animation: bgExpand 5s ease-in-out forwards;
+}
+
+.home-content {
+    color: white;
+    max-width: 800px;
+    padding-left: 40PX;
+}
+
+.home-content h1 {
+    font-size: 5rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px #000000;
+}
+
+.home-content h3 {
+    font-size: 2rem;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 200;
+    text-shadow:1px 1px #000000;
+}
+
+.home-content .btn {
+    display: inline-block;
+    padding: 15px 30px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.2rem;
+    background-color: #3eccb5;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.home-content .btn:hover {
+    background-color: #1C5E52;
+}
+
+/* About Section */
+#about {
+    padding: 50px 40px;
+    background-color: #eee7e7;
+}
+
+.about-card {
+    display: flex;
+    gap: 20px;
+    height: 500px;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color: #ffffff;
+}
+
+.about-text {
+    flex: 1;
+    padding: 80px;
+    padding-top: 0.2px;
+}
+
+.about-text h2 {
+    font-size: 3.5rem;
+    font-family: 'Bennet Display', serif;
+    margin-bottom: 5px; /* Reduce space below h2 */
+    margin-top: 0; /* Reduce space above h2 */
+}
+
+.about-text h3 {
+    font-size: 2.5rem;
+    font-family: 'Bennet Display', serif;
+    font-weight: 400;
+    margin-bottom: 20px; /* Keep some space below h3 */
+    margin-top: 5px; /* Reduce space above h3 */
+    color: #000000;
+}
+
+
+.about-text p {
+    font-size: 1rem;
+    font-family: 'Rockwell Nova', sans-serif;
+    color: #000000;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+.linkedin-link {
+    display: inline-block;
+    margin: 5px 0; /* Add spacing between elements */
+}
+
+.linkedin-logo {
+    width: 30px; /* Adjust the size of the LinkedIn logo */
+    height: auto;
+    vertical-align: middle; /* Align it nicely with the text */
+    cursor: pointer;
+}
+
+
+.about-btn-container {
+    margin-top: 50px;
+}
+
+.about-btn {
+    text-decoration: none;
+    background-color: #006d5b; /* Button background */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.about-btn:hover {
+    background-color: #3eccb5; /* Darken on hover */
+}
+
+.about-image {
+    flex: 1;
+}
+
+.about-image img {
+    width: 100%;
+    height: 500px;
+    
+}
+@media (max-width: 768px) {
+    .about-card {
+        flex-direction: column; /* Stack elements vertically */
+        text-align: center; /* Center-align text */
+    }
+
+    .about-text, .about-image {
+        max-width: 100%; /* Full width for each element */
+    }
+
+    .about-image img {
+        margin-top: 20px;
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    .about-card {
+        flex-direction: column;
+    }
+
+    .about-image, .about-text {
+        text-align: center;
+    }
+}
+
+
+/*Work section*/
+
+#work {
+    padding: 40px 40px;
+    background-color: #3eccb5;
+    height: 300px;
+}
+#work {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 300px; /* To center vertically */
+    padding: 20px;
+    
+}
+
+.work-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 10px; /* Add some space between h1 and arrow */
+    padding-bottom: 20px;
+}
+
+.arrow-container {
+    margin-bottom: 15px; /* Space between arrow and the paragraph */
+}
+
+.arrow-link {
+    text-decoration: none;
+}
+
+.arrow-circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 1.5rem;
+    color: #333;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.arrow-circle:hover {
+    background-color: #1C5E52;
+    color: white;
+    transform: translateX(5px);
+}
+
+.work-text h1{
+    text-align: center;
+    font-size: 3rem;
+    
+}
+
+.work-text p {
+    text-align: center;
+    font-size: 1.5rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+
+}
+
+/*service section*/
+
+
+#services {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #f8f8f8;
+    font-family: 'Bennet Display', serif;
+}
+
+.services-container h1 {
+    font-size: 3rem;
+    
+}
+
+.services-container h3 {
+    font-size: 1.rem;
+    margin-bottom: 30px;
+    color: #000000;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.service-item {
+    text-align: center;
+    font-family: 'Rockwell Nova', sans-serif;
+}
+
+.service-item img {
+    width: 100%;
+    max-width: 100px;
+    height: 100px;
+    border-radius: 8px;
+    margin-bottom: 2px;
+
+    
+}
+
+.service-item p {
+    font-size: 1rem;
+    color: #000000;
+    font-family: 'Rockwell Nova', sans-serif; 
+}
+
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-item img {
+        max-width: 100%;
+    }
+}
+
+
+#clients{
+        text-align: center;
+        padding: 50px 0; /* Adjust padding as needed */
+        background-color: #3eccb5;
+        height: 350px;
+}
+
+#clients h1 {
+    font-size: 3rem;
+    text-align: center;
+    padding-bottom: 1px;
+    
+}
+
+.logo-container {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    height: 300px;
+   
+    
+}
+
+.logo-slider {
+    display: inline-flex;
+    animation: scroll 30s linear infinite;
+    height: 250px;
+    gap: 100px;
+}
+
+.logo-slider img {
+    height: 200px; /* Adjust height as needed */
+    width: 200px;
+    padding-top: 20px;
+}
+
+
+#contact-us {
+    padding: 40px;
+    background-color: #383838;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.contact-left,
+.contact-right {
+    flex: 1;
+}
+
+.contact-left h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.contact-left p {
+    font-size: 1.1rem;
+    color: #fffefe;
+    font-family: 'Rockwell Nova', sans-serif;
+}
+
+.contact-right p {
+    font-size: 1.1rem;
+    color: #ffffff;
+    text-align: right;
+    font-family: 'Rockwell Nova', sans-serif;
+
+}
+
+.contact-left a{
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .contact-left,
+    .contact-right {
+        flex: none;
+        margin-bottom: 20px;
+    }
+
+    .contact-right p {
+        text-align: center;
+    }
+}
+
+
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
